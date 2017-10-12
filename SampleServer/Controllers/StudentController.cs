@@ -13,7 +13,7 @@ namespace SampleServer.Controllers
         // GET: api/Student
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "Nilshan", "Steve", "Yeshan" };
         }
 
         // GET: api/Student/5
