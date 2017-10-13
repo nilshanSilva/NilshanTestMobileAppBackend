@@ -13,6 +13,7 @@ namespace SampleServer.Controllers
         // GET: api/Student
         public IEnumerable<string> Get()
         {
+            
             return new string[] { "Nilshan", "Steve", "Yeshan" };
         }
 
@@ -25,7 +26,9 @@ namespace SampleServer.Controllers
         // POST: api/Student
         public void Post([FromBody]StudentModel value)
         {
-            StudentModel Model = value;
+            DatabaseContext context = new DatabaseContext();
+            context.StudentModel.Add(value);
+            context.SaveChanges();
         }
 
         // PUT: api/Student/5
