@@ -20,7 +20,9 @@ namespace SampleServer.Controllers
         // GET: api/Student/5
         public StudentModel Get(int id)
         {
-            return new StudentModel { Name = "Nilshan", Age = 21, School = "Esoft" };
+            DatabaseContext context = new DatabaseContext();
+            return context.StudentModel.Find(id);
+           // return new StudentModel { Name = "Nilshan", Age = 21, School = "Esoft" };
         }
 
         // POST: api/Student
